@@ -1,6 +1,7 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
+import livereload from "rollup-plugin-livereload";
 
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
@@ -14,8 +15,9 @@ export default {
     sourcemap: true,
   },
   plugins: [
-    resolve(), // tells Rollup how to find date-fns in node_modules
-    commonjs(), // converts date-fns to ES modules
+    resolve({ browser: true }), // tells Rollup how to find libraries in node_modules
+    commonjs(), // converts libraries to ES modules
+    !production && livereload("public"), // reload on changes in `public`, but only in dev
     production && terser(), // minify, but only in production
   ],
 };
