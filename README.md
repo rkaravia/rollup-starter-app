@@ -9,12 +9,12 @@ _See also https://github.com/rollup/rollup-starter-lib_
 Clone this repository and install its dependencies:
 
 ```bash
-git clone https://github.com/rollup/rollup-starter-app
+git clone https://github.com/rkaravia/rollup-starter-app
 cd rollup-starter-app
 npm install
 
 # or
-npx degit "rollup/rollup-starter-app" my-app
+npx degit "rkaravia/rollup-starter-app" my-app
 cd my-app
 npm install
 ```
